@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Main page</title>
+        <!-- Latest compiled and minified CSS -->
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    </head>
+    <body>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+        <form method="POST" action="{{ url_for('short.add_link') }}" style="margin: 100px;">
+            <div class="form-group">
+                <label for="InputOriginalURL">Original Link</label>
+                <input type="text" class="form-control" name="original_url" required>
+            </div>
+            <div class="form-group">
+                <label for="formLifetimeLink">Lifetime of link</label>
+                <input type="number" min="1" max="365" class="form-control" name="lifetime" id="formLifetimeLink" placeholder="Enter number of days from 1 to 365. By default it's 90 days.">
+            </div>
+            <button type="submit" class="btn btn-primary" style="margin-top: 30px; width: 100px;">Short It</button>
+            <a role="button" class="btn btn-success" href="{{ url_for('short.stats') }}"
+                    style="margin-top: 30px; margin-left: 20px; width: 100px;">Statistics</a>
+        </form>
+    </body>
+</html>
