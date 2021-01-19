@@ -9,8 +9,7 @@ To launch this project you need to follow next steps:
     <pip install virtualenv>
 4. To create a virtual environment, you must specify a path. For example to create one in the local directory called ‘URL_Shortener’, type the following:
     <python3 -m venv venv>
-5. Activate your venv:
-    <source venv/bin/activate>
+5. Activate your venv: <source venv/bin/activate>
 6. Install all needed packages for project:
     <pip install -r requirements.txt>
 7. Run project by command:
