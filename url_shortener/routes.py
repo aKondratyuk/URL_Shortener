@@ -32,9 +32,12 @@ def index():
 @requires_auth
 def add_link():
     original_url = request.form['original_url']
-    days = int(request.form['lifetime'])
-    lifetime = datetime.now() + timedelta(days=days)
-
+    days = request.form['lifetime']
+    if days:
+        lifetime = datetime.now() + timedelta(days=int(days))
+    else:
+        lifetime = datetime.now() + timedelta(days=90)
+        
     link = Link(original_url=original_url, expiration_date=lifetime)
     db.session.add(link)
     db.session.commit()
